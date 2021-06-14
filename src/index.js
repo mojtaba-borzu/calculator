@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import Calculator from './calculator/Calculator';
-// import './calculator/Calculator.css';
-import AddNumber from './AddNumber';
+import App from './App';
 
-ReactDOM.render (<AddNumber />, document.getElementById ('root'));
+ReactDOM.render (<App />, document.getElementById ('root'));

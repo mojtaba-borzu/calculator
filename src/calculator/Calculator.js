@@ -1,3 +1,4 @@
+import AddNumber from './AddNumber'
 import './Calculator.css'
 
 function Calculator() {
@@ -6,7 +7,7 @@ function Calculator() {
         <>
         <div className='container'>
             <div className='display'>
-               <p>hello</p>
+              <AddNumber />
             </div>
 
 

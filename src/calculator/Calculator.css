@@ -16,8 +16,8 @@
     margin: 20px ;
     border-radius: 10px;
     display :flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     padding-left: 10px;
-    font-size: 60px;
+    /* font-size: 60px; */
 }
