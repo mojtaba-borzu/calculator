@@ -1,0 +1,27 @@
+.headers {
+ 
+  color: blue;
+  background-color: red;
+}
+.btn {
+
+  background-color: blue;
+}
+
+.task {
+
+  background-color: darkgrey;
+}
+
+.taskreminder {
+  
+  color: greenyellow;
+  background-color: darkgrey;
+}
+.formAddTask{
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  
+  
+}
