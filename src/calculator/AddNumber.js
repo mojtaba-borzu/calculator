@@ -5,6 +5,7 @@ function AddNumber () {
   const[numOne,setNumOne]=useState()
    const[numTwo,setNumTwo]=useState()
    const[equalMathOne,setEqualMathOne]=useState('')
+   const[toClear,setToClear]=useState(1)
 
    let inputNumOne =numOne
    let inputNumTwo =numTwo
@@ -20,11 +21,27 @@ let endAdd=[]
 
 
 
+
     const AddNumberTo = () => {
-      numberOne =(inputNumOne.split('')).reverse()
-      numberTwo =(inputNumTwo.split('')).reverse()
-      
-// (inputNumOne.length- inputNumTwo.length)>=0 ? `${numberTwo=inputNumTwo} ${numberOne=inputNumOne}`:0
+
+      inputNumOne =(inputNumOne.split('')).reverse()
+      inputNumTwo =(inputNumTwo.split('')).reverse()
+   const   inputField=()=>{
+        numberOne=inputNumOne
+        numberTwo=inputNumTwo
+        return (numberOne , numberTwo)
+
+      }
+      const changeInput=()=>{
+        numberOne=inputNumTwo
+        numberTwo=inputNumOne
+        return (numberOne , numberTwo)
+
+      }
+  ((inputNumOne.length >= inputNumTwo.length)? inputField():changeInput())   
+
+
+
     
     console.log(inputNumOne)
     console.log(inputNumTwo)
@@ -52,31 +69,41 @@ let endAdd=[]
                setEqual (equal.reverse ().join (''));
         
           
-             
+ setToClear (0)
+           
 
     };
-    const onSubmit= ( )=>{
-      setNumOne()
-      setNumTwo()
+
+    const refresh = ( )=>{
+     
+      setNumOne('')
+      setNumTwo('')
       setEqual([])
+      equalMath=''
       setEqualMathOne('')
+     
+    setToClear(1)
+  
 
     }
     
-   
   return (
     <div>
-      <form onSubmit={onSubmit} >
-     <input type="text" value={numOne} onChange={(e)=>{setNumOne(e.target.value)}}/>
+      <form  >
+     <input type="text"  value={numOne} onChange={(e)=>{setNumOne(e.target.value)}}/>
      <h3>{numOne}</h3>
      <input type="text" value={numTwo} onChange={(e)=>{setNumTwo(e.target.value)}}/>
     <h3>{numTwo}</h3> 
     <h1>  {`equal = ${equal}`}</h1>
-    <h1>{`equal math = ${equal} * 10 `} <sup>{equalMathOne}</sup>   </h1>
-      <button type="button" onClick={AddNumberTo}>
-        ADD NUMBER
-      </button>
-      <button type='submit'>Clear</button>
+     {toClear ===0? <h1>{`scientific format = ${equal} * 10 `} <sup>{equalMathOne}</sup>   </h1>: <h1> scientific format = </h1>}
+  <div>
+  {toClear ===1? 
+       <button type="button" onClick={AddNumberTo}>
+        Addition
+      </button>: <button type='button' onClick={refresh}>Clear</button> }
+    
+    </div>  
+    
       </form>
     
     </div>
