@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 
+
 function AddNumber () {
   const [equal, setEqual] = useState ([]);
   const[numOne,setNumOne]=useState()
@@ -86,9 +87,10 @@ let endAdd=[]
   
 
     }
+
     
   return (
-    <div>
+    <div className="" >
       <form  >
      <input type="text"  value={numOne} onChange={(e)=>{setNumOne(e.target.value)}}/>
      <h3>{numOne}</h3>
@@ -98,9 +100,9 @@ let endAdd=[]
      {toClear ===0? <h1>{`scientific format = ${equal} * 10 `} <sup>{equalMathOne}</sup>   </h1>: <h1> scientific format = </h1>}
   <div>
   {toClear ===1? 
-       <button type="button" onClick={AddNumberTo}>
+       <button className="bg-red-500 hover:bg-red-800" type="button" onClick={AddNumberTo} >
         Addition
-      </button>: <button type='button' onClick={refresh}>Clear</button> }
+      </button>: <button className="bg-green-400 hover:bg-green-700" type='button' onClick={refresh}>Clear</button> }
     
     </div>  
      
